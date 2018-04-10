@@ -12,7 +12,7 @@ for(let value in obj){
     obj[value].forEach(e => {
         if(e.family=="IPv4"){
             if(e.address.indexOf('127.0.0.1')==-1){
-                ip = 'http://'+ e.address;
+                ip = e.address;
             }
         }
     })
@@ -59,7 +59,7 @@ let config = merge(baseWebpackConfig, {
     },
     /*设置api转发*/
     devServer: {
-        host: '0.0.0.0',
+        host: ip,
         port: 3000,
         hot: true,
         inline: true,
@@ -75,7 +75,7 @@ let config = merge(baseWebpackConfig, {
         ],
         /*打开浏览器 并打开本项目网址*/
         after() {
-            opn(ip +':'+ this.port);
+            opn('http://'+ ip +':'+ this.port);
         }
     }
 });
