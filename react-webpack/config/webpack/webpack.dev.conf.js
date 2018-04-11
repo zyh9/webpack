@@ -8,10 +8,10 @@ const webpackFile = require("./webpack.file.conf");//一些路径配置
 const os = require('os');
 const obj = os.networkInterfaces();
 let ip;
-for(let value in obj){
+for (let value in obj) {
     obj[value].forEach(e => {
-        if(e.family=="IPv4"){
-            if(e.address.indexOf('127.0.0.1')==-1){
+        if (e.family == "IPv4") {
+            if (e.address.indexOf('127.0.0.1') == -1) {
                 ip = e.address;
             }
         }
@@ -103,7 +103,7 @@ let config = merge(baseWebpackConfig, {
         ],
         /*打开浏览器 并打开本项目网址*/
         after() {
-            opn('http://'+ ip +':'+ this.port);
+            opn('http://' + ip + ':' + this.port);
         }
     }
 });

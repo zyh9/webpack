@@ -1,6 +1,6 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 
-const Footer = () =>(
+const Footer = () => (
     <div className="bottom">
         这是公用的底部，啦啦啦
     </div>
