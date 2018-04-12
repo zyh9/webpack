@@ -1,10 +1,10 @@
-.DS_Store
 node_modules/
 dist/
 .cache-loader/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.DS_Store
 
 # Editor directories and files
 .idea
