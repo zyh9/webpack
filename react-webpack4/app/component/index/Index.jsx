@@ -11,8 +11,8 @@ class Index extends Component {
                 <div className="title">
                     这是首页
                 </div>
-                <Header></Header>
-                <Footer></Footer>
+                <Header/>
+                <Footer/>
             </div>
         )
     }
