@@ -98,7 +98,7 @@ let config = merge(baseWebpackConfig, {
         proxy: [
             {
                 context: ['/api/**', '/u/**'],
-                target: 'http://192.168.1.100:8080/',
+                target: 'http://192.168.6.100:8080/',
                 secure: false
             }
         ],
