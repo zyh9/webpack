@@ -1,4 +1,4 @@
-//方法以函数表达式罗列
+//地址栏参数获取
 const getUrl = _ =>{
     let urlHref = window.location.href;
     let urlObj = {};

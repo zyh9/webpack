@@ -1,4 +1,5 @@
 const apiObj = {
-    getTeamList:'/login/getTeamList',
+    getActivity:'/mobileapi/getActivity',
+    getSkin:'/mobileapi/getSkin',
 }
 export default apiObj;
