@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "entry": "node config/entry/entryBuild.js",
-    "devBuildHtml": "node config/webpack/webpack.devBuildHtml.conf.js",
-    "devNew": "npm run entry && npm run devBuildHtml",
+    "devHtml": "node config/webpack/webpack.html.conf.js",
+    "devNew": "npm run entry && npm run devHtml",
     "dev": "webpack-dev-server --devtool eval --progress --colors --profile --config config/webpack/webpack.dev.conf.js",
     "build": "SET BABEL_ENV=production && webpack --progress --colors --config config/webpack/webpack.prod.conf.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "react": "^16.3.1",
+    "react-cookie": "^2.1.4",
     "react-dom": "^16.3.1"
   },
   "devDependencies": {

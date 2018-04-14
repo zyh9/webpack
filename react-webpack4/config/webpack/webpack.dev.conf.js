@@ -97,8 +97,8 @@ let config = merge(baseWebpackConfig, {
         disableHostCheck: true,
         proxy: [
             {
-                context: ['/api/**', '/u/**'],
-                target: 'http://192.168.6.100:8080/',
+                context: ['/login/**'],
+                target: 'http://uuteam.mit.cn/',
                 secure: false
             }
         ],
