@@ -13,7 +13,7 @@ const ajax = (url, method, data, successCB, errorCB) => {
                 errorCB ? errorCB(data, status) : console.log(data, status)
             }
         },
-        error: (data, status) => console.log(status, status)
+        error: (data, status) => console.log(data, status)
     });
 };
 
