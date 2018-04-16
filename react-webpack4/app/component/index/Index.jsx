@@ -23,15 +23,15 @@ class Index extends Component {
     }
     componentDidMount() {
         // console.log(apiRequest, apiRequestAsync, util)
-        this.IndexData()
-        // apiRequest.post('getActivity', {
-        //     id: 818,
-        //     templetId: 33
-        // }, res => {console.log('成功',res)}, err => console.log('失败',err))
-        // apiRequest.post('getSkin', {
-        //     id: 78,
-        //     templetId: 33
-        // }, res => {console.log('成功',res)}, err => console.log('失败',err))
+        // this.IndexData()
+        apiRequest.post('getActivity', {
+            id: 818,
+            templetId: 33
+        }, res => {console.log('成功',res)}, err => console.log('失败',err))
+        apiRequest.post('getSkin', {
+            id: 78,
+            templetId: 33
+        }, res => {console.log('成功',res)}, err => console.log('失败',err))
     }
     render() {
         return (
