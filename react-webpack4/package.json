@@ -7,8 +7,8 @@
     "entry": "node config/entry/entryBuild.js",
     "devHtml": "node config/webpack/webpack.html.conf.js",
     "devNew": "npm run entry && npm run devHtml",
-    "dev": "webpack-dev-server --devtool eval --progress --colors --profile --config config/webpack/webpack.dev.conf.js",
-    "build": "SET BABEL_ENV=production && webpack --progress --colors --config config/webpack/webpack.prod.conf.js",
+    "dev": "cross-env webpack-dev-server --devtool eval --progress --colors --profile --config config/webpack/webpack.dev.conf.js",
+    "build": "cross-env BABEL_ENV=production && webpack --progress --colors --config config/webpack/webpack.prod.conf.js",
     "ptp": "npm run build && gulp buildTime zip",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,6 +30,7 @@
     "cache-loader": "^1.2.2",
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.1",
+    "cross-env": "^5.1.4",
     "css-loader": "^0.28.11",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file": "^0.2.2",
