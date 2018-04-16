@@ -19,7 +19,7 @@ gulp.task('buildTime', () =>
 /* 打包生产目录 */
 gulp.task('zip', () =>
     gulp.src(path.resolve(webpackFile.proDirectory + '/**'))
-        .pipe(zip('[' + packageInfo.version +']-['+ moment(new Date()).format('YYYY-MM-DD HH-mm-ss')+'].zip'))
+        .pipe(zip('[' + webpackFile.projectName +']-['+ moment(new Date()).format('YYYY-MM-DD HH-mm-ss')+'].zip'))
         .pipe(gulp.dest('backup'))
 );
 /* 上传生产目录到测试环境  */
