@@ -2,7 +2,7 @@
 const getUrl = _ =>{
     let urlHref = window.location.href;
     let urlObj = {};
-    if (urlHref.indexOf('?') != -1) {
+    if (urlHref.indexOf('?') !== -1) {
         let getArr = urlHref.split('?')[1].split('&');
         getArr.forEach(e => {
             if (!(e.split('=')[0] in urlObj)) {
@@ -15,7 +15,7 @@ const getUrl = _ =>{
 //针对hash路由做参数处理
 const filter = _ =>{
     let urlObj = getUrl();
-    if (urlObj != 'nodata') {
+    if (urlObj !== 'nodata') {
         for (let e in urlObj) {
             urlObj[e] = urlObj[e].replace(/#\/$/g, '')
         }
