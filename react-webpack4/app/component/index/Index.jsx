@@ -34,6 +34,7 @@ class Index extends Component {
         }, res => {console.log('成功',res)}, err => console.log('失败',err))
     }
     render() {
+        let a = 0;
         return (
             <div className="index">
                 <div className="title">
