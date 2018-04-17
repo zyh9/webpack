@@ -17,9 +17,14 @@
   "license": "ISC",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "immutable": "^3.8.2",
+    "keymirror": "^0.1.1",
     "react": "^16.3.2",
     "react-cookie": "^2.1.4",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
