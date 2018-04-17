@@ -35,7 +35,7 @@ class Index extends Component {
     }
     render() {
         // 测试eslint
-        // let a = 0;
+        let a = 0;
         return (
             <div className="index">
                 <div className="title">
