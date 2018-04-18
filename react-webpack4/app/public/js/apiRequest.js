@@ -10,10 +10,12 @@ const ajax = (url, method, data, successCB, errorCB) => {
             if (data.status) {
                 successCB && successCB(data, status)
             } else {
-                errorCB ? errorCB(data, status) : console.log(data, status)
+                errorCB && errorCB(data, status)
             }
         },
-        error: (data, status) => console.log(data, status)
+        error: (data, status) => {
+            console.log(data, status)
+        }
     });
 };
 
