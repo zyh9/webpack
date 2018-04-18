@@ -46,10 +46,10 @@ let config = merge(baseWebpackConfig, {
         }
     },
     plugins: [
-        // extract css into its own file
+        // 将css提取到它自己的文件中
         new ExtractTextPlugin('css/[name].[md5:contenthash:hex:8].css'),
-        // Compress extracted CSS. We are using this plugin so that possible
-        // duplicated CSS from different components can be deduped.
+        // 压缩提取的CSS
+        // 可以从不同组件复制CSS
         new OptimizeCSSPlugin({
             assetNameRegExp: /\.css$/g,
             cssProcessor: require('cssnano'),
