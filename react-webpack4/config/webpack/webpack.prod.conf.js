@@ -116,7 +116,6 @@ config.plugins.push(new CleanWebpackPlugin([webpackFile.proDirectory], { root: p
 let copyObj = [
     /*  
         {from: './app/public/plugin', to: './plugin'},//一些不需要走webpack的插件
-        {from: './app/public/versionTips', to: './versionTips'},//固定不变的浏览器版本提示文件
         {from: './app/public/file', to: './resource'},//一些固定的文件，如下载文件
     */
     { from: './app/public/img/favicon.ico', to: './' },//网站favicon.ico
@@ -129,7 +128,7 @@ copyObj.map((data) => {
     )
 });
 
-/* 拷贝静态资源  */
+/* 拷贝静态资源 */
 copyArr.map(function (data) {
     return config.plugins.push(data)
 });
