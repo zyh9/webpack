@@ -14,16 +14,3 @@
     npm run build
 ```
 [多页面json配置，点我查看](https://github.com/zyh9/webpack/blob/master/react-webpack4/config/entry/entry.js)
-
-### webpack4 引入eslint代码检查
-
-```javascript
-    "eslintConfig": {
-        "extends": "react-app",
-        "rules": {
-            "import/no-webpack-loader-syntax": 0,
-            "no-script-url": 0,
-            "jsx-a11y/href-no-hash": 2
-        }
-    }
-```
