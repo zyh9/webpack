@@ -24,7 +24,7 @@ const filter = _ =>{
 }
 //是否是手机号
 const isMobile = val => {
-    let reg = /^1[3-9][0-9]\d{8}$/;
+    let reg = /^1[3-9]\d{9}$/;
     return reg.test(val);
 }
 
