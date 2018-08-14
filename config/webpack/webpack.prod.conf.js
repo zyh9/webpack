@@ -5,6 +5,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const safeParser = require('postcss-safe-parser');
 const baseWebpackConfig = require("./webpack.base.conf");
 const webpackFile = require('./webpack.file.conf');
 const entry = require("./webpack.entry.conf");
@@ -54,6 +56,7 @@ let config = merge(baseWebpackConfig, {
             assetNameRegExp: /\.css$/g,
             cssProcessor: require('cssnano'),
             cssProcessorOptions: {
+                parser: safeParser,
                 discardComments: { removeAll: true },
                 // 避免 cssnano 重新计算 z-index
                 safe: true

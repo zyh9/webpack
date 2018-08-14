@@ -2,7 +2,7 @@ module.exports = {
     plugins: {
         "precss": {},
         "postcss-cssnext": {},
-        "autoprefixer": {},
+        // "autoprefixer": {},
         // "postcss-px2rem": {
         //     remUnit:'75'
         // }
