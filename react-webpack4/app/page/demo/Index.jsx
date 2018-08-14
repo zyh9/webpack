@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import Header from '../common/Header';
-import Footer from '../common/Footer';
+import Header from '../../component/Header';
+import Footer from '../../component/Footer';
 import '../../public/css/common.pcss';
-import '../../public/css/shop.pcss';
+import '../../public/css/demo.pcss';
 
-class Shop extends Component {
+class Demo extends Component {
     render() {
         return (
-            <div className="shop">
+            <div className="demo">
                 <div className="title">
-                    这是商城
+                    这是演示
                 </div>
                 <Header/>
                 <Footer/>
@@ -18,4 +18,4 @@ class Shop extends Component {
     }
 }
 
-export default Shop;
+export default Demo;
