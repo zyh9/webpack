@@ -8,12 +8,12 @@
     "devHtml": "node config/webpack/webpack.html.conf.js",
     "devNew": "npm run entry && npm run devHtml",
     "dev": "cross-env webpack-dev-server --devtool eval --progress --colors --profile --config config/webpack/webpack.dev.conf.js",
-    "build": "cross-env BABEL_ENV=production && webpack --progress --colors --config config/webpack/webpack.prod.conf.js",
+    "build": "cross-env SET BABEL_ENV=production && webpack --progress --colors --config config/webpack/webpack.prod.conf.js",
     "buildGulp": "npm run build && gulp buildTime zip",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "zyh",
   "license": "ISC",
   "dependencies": {
     "babel-polyfill": "^6.26.0",

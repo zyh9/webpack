@@ -125,7 +125,7 @@ let config = merge(baseWebpackConfig, {
         proxy: [
             {
                 context: ['/mobileapi/**'],
-                target: 'http://192.168.6.108:3002/',
+                target: 'http://192.168.1.10:3000/',
                 secure: false
             }
         ],
