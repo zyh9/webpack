@@ -4,7 +4,7 @@ import Footer from '../common/Footer';
 import '../../public/css/common.pcss';
 import '../../public/css/shop.pcss';
 
-class Index extends Component {
+class Shop extends Component {
     render() {
         return (
             <div className="shop">
@@ -18,4 +18,4 @@ class Index extends Component {
     }
 }
 
-export default Index;
+export default Shop;

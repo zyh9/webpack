@@ -1,6 +1,10 @@
 module.exports = {
-    plugins: [
-        require('precss'),
-      require('postcss-cssnext')
-    ]
+    plugins: {
+        "precss": {},
+        "postcss-cssnext": {},
+        "autoprefixer": {},
+        // "postcss-px2rem": {
+        //     remUnit:'75'
+        // }
+    }
 }

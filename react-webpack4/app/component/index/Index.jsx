@@ -10,7 +10,7 @@ import apiRequestAsync from '../../public/js/apiRequestAsync';
 // 使用路由
 import {HashRouter as Router, Switch, Route, NavLink, Link, Redirect} from 'react-router-dom';
 import Shop from '../shop/Index';
-import Demo from '../Demo/Index';
+import Demo from '../demo/Index';
 
 // 引入公用方法
 import util from '$util/util';
@@ -32,14 +32,14 @@ class Index extends Component {
     componentDidMount() {
         // console.log(apiRequest, apiRequestAsync, util)
         // this.IndexData()
-        apiRequest.post('getActivity', {
-            id: 818,
-            templetId: 33
-        }, res => {console.log('成功',res)}, err => console.log('失败',err))
-        apiRequest.post('getSkin', {
-            id: 78,
-            templetId: 33
-        }, res => {console.log('成功',res)}, err => console.log('失败',err))
+        // apiRequest.post('getActivity', {
+        //     id: 818,
+        //     templetId: 33
+        // }, res => {console.log('成功',res)}, err => console.log('失败',err))
+        // apiRequest.post('getSkin', {
+        //     id: 78,
+        //     templetId: 33
+        // }, res => {console.log('成功',res)}, err => console.log('失败',err))
     }
     render() {
         // 测试eslint
