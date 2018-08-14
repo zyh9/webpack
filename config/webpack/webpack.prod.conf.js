@@ -96,6 +96,7 @@ let config = merge(baseWebpackConfig, {
     }
 });
 let pages = entry;
+console.log(entry)
 for (let chunkName in pages) {
     let conf = {
         filename: chunkName + '.html',
