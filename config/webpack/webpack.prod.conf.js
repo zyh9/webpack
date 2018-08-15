@@ -40,14 +40,7 @@ let config = merge(baseWebpackConfig, {
     module: {
         rules: [
             // {
-            //     test: /\.(css|pcss)$/,
-            //     use: ExtractTextPlugin.extract({
-            //         fallback: "style-loader",
-            //         use: "css-loader!postcss-loader"
-            //     })
-            // },
-            // {
-            //     test: /\.(png|jpg|gif|ttf|eot|woff|woff2|svg)$/,
+            //     test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
             //     loader: 'url-loader?limit=8192&name=[name].[hash:8].[ext]&publicPath=../' + webpackFile.resourcePrefix + '&outputPath=' + webpackFile.resource + '/'
             // },
             {
@@ -66,7 +59,7 @@ let config = merge(baseWebpackConfig, {
             },
             {
                 test: webpackCom.img,
-                loader: 'url-loader?limit=8192&name=[name].[hash:8].[ext]&publicPath=/' + webpackFile.resourcePrefix + '&outputPath=' + webpackFile.resource + '/'
+                loader: 'file-loader?limit=8192&name=[name].[hash:8].[ext]&publicPath=../' + webpackFile.resourcePrefix + '&outputPath=' + webpackFile.resource + '/'
             }
         ]
     }

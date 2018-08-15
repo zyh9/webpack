@@ -54,11 +54,11 @@ let config = {
         ]
     },
     plugins: [
-        // new webpack.ProvidePlugin({
-        //     "$": "jquery",
-        //     "jQuery": "jquery",
-        //     "window.jQuery": "jquery"
-        // })
+        new webpack.ProvidePlugin({
+            "$": "jquery",
+            "jQuery": "jquery",
+            "window.jQuery": "jquery"
+        })
     ],
     resolve: {
         alias: {//创建模块别名

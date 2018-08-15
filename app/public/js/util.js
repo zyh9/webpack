@@ -12,6 +12,7 @@ const getUrl = _ =>{
         return urlObj;
     } else return 'nodata';
 }
+
 //针对hash路由做参数处理
 const filter = _ =>{
     let urlObj = getUrl();
@@ -22,6 +23,7 @@ const filter = _ =>{
         return urlObj;
     } else return 'nodata';
 }
+
 //是否是手机号
 const isMobile = val => {
     let reg = /^1[3-9]\d{9}$/;

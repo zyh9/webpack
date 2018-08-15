@@ -13,7 +13,7 @@ module.exports = {
     cssInclude : [
         path.resolve(__dirname, "../../app/public/css/"),
     ],
-    img:/\.(png|jpg|gif|ttf|eot|woff|woff2|svg)$/,
+    img:/\.(png|jpe?g|gif|svg)(\?.*)?$/,
     // postcss:[
     //     require('precss'),
     //     require('postcss-cssnext'),
