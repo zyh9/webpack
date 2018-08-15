@@ -3,8 +3,8 @@ module.exports = {
         "precss": {},
         "postcss-cssnext": {},
         // "autoprefixer": {},
-        // "postcss-px2rem": {
-        //     remUnit:'75'
-        // }
+        "postcss-px2rem": {
+            remUnit:'75'
+        }
     }
 }

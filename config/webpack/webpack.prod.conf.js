@@ -20,33 +20,6 @@ let config = merge(baseWebpackConfig, {
         filename: 'js/[name].[chunkhash:8].js',
         chunkFilename: "js/[name]-[id].[chunkhash:8].js",
     },
-    optimization: {
-        //包清单
-        runtimeChunk: {
-            name: "manifest"
-        },
-        //拆分公共包
-        splitChunks: {
-            cacheGroups: {
-                //项目公共组件
-                common: {
-                    chunks: "initial",
-                    name: "common",
-                    minChunks: 2,
-                    maxInitialRequests: 5,
-                    minSize: 0
-                },
-                //第三方组件
-                vendor: {
-                    test: /node_modules/,
-                    chunks: "initial",
-                    name: "vendor",
-                    priority: 10,
-                    enforce: true
-                }
-            }
-        }
-    },
     plugins: [
         // 将css提取到它自己的文件中
         new ExtractTextPlugin('css/[name].[md5:contenthash:hex:8].css'),
@@ -66,31 +39,34 @@ let config = merge(baseWebpackConfig, {
     ],
     module: {
         rules: [
-            {
-                test: /\.(js|jsx)$/,
-                use: [
-                    'babel-loader',
-                ],
-            },
-            {
-                test: /\.(js|jsx)$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/,
-            },
+            // {
+            //     test: /\.(css|pcss)$/,
+            //     use: ExtractTextPlugin.extract({
+            //         fallback: "style-loader",
+            //         use: "css-loader!postcss-loader"
+            //     })
+            // },
+            // {
+            //     test: /\.(png|jpg|gif|ttf|eot|woff|woff2|svg)$/,
+            //     loader: 'url-loader?limit=8192&name=[name].[hash:8].[ext]&publicPath=../' + webpackFile.resourcePrefix + '&outputPath=' + webpackFile.resource + '/'
+            // },
             {
                 test: /\.(css|pcss)$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: "css-loader!postcss-loader"
-                })
+                    use: [
+                        { loader: 'css-loader', options: {importLoaders: 1 } },
+                        { loader: 'postcss-loader', options: {
+                            ident: 'postcss',
+                            // plugins: _ => webpackCom.postcss
+                        }}
+                    ],
+                }),
+                include: webpackCom.cssInclude,
             },
             {
-                test: /\.(png|jpg|gif|ttf|eot|woff|woff2|svg)$/,
-                loader: 'url-loader?limit=8192&name=[name].[hash:8].[ext]&publicPath=../' + webpackFile.resourcePrefix + '&outputPath=' + webpackFile.resource + '/'
-            },
-            {
-                test: /\.swf$/,
-                loader: 'file?name=js/[name].[ext]'
+                test: webpackCom.img,
+                loader: 'url-loader?limit=8192&name=[name].[hash:8].[ext]&publicPath=/' + webpackFile.resourcePrefix + '&outputPath=' + webpackFile.resource + '/'
             }
         ]
     }

@@ -4,6 +4,7 @@ const merge = require('webpack-merge');//webpack配置文件合并
 const path = require("path");
 const baseWebpackConfig = require("./webpack.base.conf");//基础配置
 const webpackFile = require("./webpack.file.conf");//一些路径配置
+const webpackCom = require('./webpack.com.conf');
 const eslintFormatter = require('react-dev-utils/eslintFormatter');
 
 const os = require('os');
@@ -28,54 +29,12 @@ let config = merge(baseWebpackConfig, {
         chunkFilename: "js/[name].js",
         publicPath: ''
     },
-    /*提取第三方包及公共组件*/
-    optimization: {
-        //包清单
-        runtimeChunk: {
-            name: "manifest"
-        },
-        //拆分公共包
-        splitChunks: {
-            cacheGroups: {
-                //项目公共组件
-                common: {
-                    chunks: "initial",
-                    name: "common",
-                    minChunks: 2,
-                    maxInitialRequests: 5,
-                    minSize: 0
-                },
-                //第三方组件
-                vendor: {
-                    test: /node_modules/,
-                    chunks: "initial",
-                    name: "vendor",
-                    priority: 10,
-                    enforce: true
-                }
-            }
-        }
-    },
     plugins: [
         /*设置热更新*/
         new webpack.HotModuleReplacementPlugin(),
     ],
     module: {
         rules: [
-            {
-                test: /\.(js|jsx)$/,
-                use: [
-                    'cache-loader',
-                    'babel-loader',
-                ],
-                include: [
-                    path.resolve(__dirname, "../../app"),
-                    path.resolve(__dirname, "../../entryBuild")
-                ],
-                exclude: [
-                    path.resolve(__dirname, "../../node_modules")
-                ],
-            },
             {
                 test: /\.(js|jsx)$/,
                 enforce: 'pre',
@@ -104,11 +63,19 @@ let config = merge(baseWebpackConfig, {
             },
             {
                 test: /\.(css|pcss)$/,
-                loader: 'style-loader?sourceMap!css-loader?sourceMap!postcss-loader?sourceMap',
-                exclude: /node_modules/
+                use: [
+                    { loader: "style-loader", options: {sourceMap: true}},
+                    { loader: 'css-loader', options: {sourceMap: true, importLoaders: 1 } },
+                    { loader: 'postcss-loader', options: {
+                        sourceMap: true,
+                        ident: 'postcss',
+                        // plugins: _ => webpackCom.postcss
+                    }}
+                ],
+                include: webpackCom.cssInclude,
             },
             {
-                test: /\.(png|jpg|gif|ttf|eot|woff|woff2|svg|swf)$/,
+                test: webpackCom.img,
                 loader: 'file-loader?name=[name].[ext]&outputPath=' + webpackFile.resource + '/'
             }
         ]
