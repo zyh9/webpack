@@ -11,7 +11,7 @@ rimraf.sync(entryBuildPath);
 fs.mkdirSync(entryBuildPath);
 const entryContent = data => `import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
-import Index from '../app/page/${data.path}';
+import Index from '../src/page/${data.path}';
 ReactDOM.render([<Index key="Index"/>],document.getElementById('app'));`;
 /*生成webpack entry 入口文件*/
 entry.map((data) => {

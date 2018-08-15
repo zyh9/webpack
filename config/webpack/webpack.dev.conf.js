@@ -8,14 +8,12 @@ const webpackCom = require('./webpack.com.conf');
 const eslintFormatter = require('react-dev-utils/eslintFormatter');
 
 const os = require('os');
-const obj = os.networkInterfaces();
+const osAddress = os.networkInterfaces();
 let ip;
-for (let value in obj) {
-    obj[value].forEach(e => {
+for (let value in osAddress) {
+    osAddress[value].forEach(e => {
         if (e.family == "IPv4") {
-            if (e.address.indexOf('127.0.0.1') == -1) {
-                ip = e.address;
-            }
+            e.address.indexOf('127.0.0.1') == -1&&(ip = e.address);
         }
     })
 }
@@ -55,7 +53,7 @@ let config = merge(baseWebpackConfig, {
                     },
                 ],
                 include: [
-                    path.resolve(__dirname, "../../app")
+                    path.resolve(__dirname, "../../src")
                 ],
                 exclude: [
                     path.resolve(__dirname, "../../node_modules")
@@ -97,9 +95,9 @@ let config = merge(baseWebpackConfig, {
             }
         ],
         /*打开浏览器 并打开本项目网址*/
-        after() {
-            opn('http://' + ip + ':' + this.port);
-        }
+        // after() {
+        //     opn('http://' + ip + ':' + this.port);
+        // }
     }
 });
 module.exports = config;

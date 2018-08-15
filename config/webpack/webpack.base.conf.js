@@ -44,7 +44,7 @@ let config = {
                     'babel-loader',
                 ],
                 include: [
-                    path.resolve(__dirname, "../../app"),
+                    path.resolve(__dirname, "../../src"),
                     path.resolve(__dirname, "../../entryBuild")
                 ],
                 exclude: [
@@ -62,7 +62,7 @@ let config = {
     ],
     resolve: {
         alias: {//创建模块别名
-            $util: path.resolve(__dirname,'../../app/public/js')
+            $util: path.resolve(__dirname,'../../src/public/js')
         },
         extensions: [".jsx", ".js", ".json", ".css", ".pcss"],//自动解析的扩展
     }

@@ -1,5 +1,5 @@
 {
-  "name": "react",
+  "name": "react-zyh",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "devEntry": "node config/entry/entryBuild.js",
     "devHtml": "node config/webpack/webpack.html.conf.js",
     "devFile": "npm run devEntry && npm run devHtml",
-    "dev": "cross-env webpack-dev-server --devtool eval --progress --colors --profile --config config/webpack/webpack.dev.conf.js",
+    "dev": "cross-env webpack-dev-server --open --devtool eval --progress --colors --profile --config config/webpack/webpack.dev.conf.js",
     "build": "cross-env BABEL_ENV=production webpack --progress --colors --config config/webpack/webpack.prod.conf.js"
   },
   "keywords": [],
@@ -64,6 +64,7 @@
     "postcss-safe-parser": "^4.0.1",
     "precss": "^3.1.2",
     "react-dev-utils": "^5.0.1",
+    "redux-thunk": "^2.3.0",
     "rimraf": "^2.6.2",
     "style-loader": "^0.22.1",
     "url-loader": "^1.1.0",
