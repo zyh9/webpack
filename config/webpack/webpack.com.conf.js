@@ -16,7 +16,8 @@ module.exports = {
     img:/\.(png|jpe?g|gif|svg)(\?.*)?$/,
     // postcss:[
     //     require('precss'),
-    //     require('postcss-cssnext'),
+    //     require('autoprefixer'),
+    //     require('postcss-preset-env'),
     //     require('postcss-px2rem')({
     //         remUnit:'75'
     //     })
