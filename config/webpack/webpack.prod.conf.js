@@ -59,7 +59,7 @@ let config = merge(baseWebpackConfig, {
             },
             {
                 test: webpackCom.img,
-                loader: 'file-loader?limit=8192&name=[name].[hash:8].[ext]&publicPath=../' + webpackFile.resourcePrefix + '&outputPath=' + webpackFile.resource + '/'
+                loader: 'url-loader?limit=8192&name=[name].[hash:8].[ext]&publicPath=../' + webpackFile.resourcePrefix + '&outputPath=' + webpackFile.resource + '/'
             }
         ]
     }
