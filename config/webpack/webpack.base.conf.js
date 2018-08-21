@@ -3,7 +3,7 @@ const webpack = require('webpack');//引入webpack
 const entry = require("./webpack.entry.conf");
 const newEntry = {};
 for (let name in entry) {
-    newEntry[name] = entry[name][0]
+    newEntry[name] = ['webpack-hud', entry[name][0]]
 }
 let config = {
     //入口文件
