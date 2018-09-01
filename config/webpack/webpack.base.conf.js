@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');//引入webpack
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const entry = require("./webpack.entry.conf");
 const newEntry = {};
 for (let name in entry) {
@@ -13,6 +14,9 @@ let config = {
         runtimeChunk: {
             name: "manifest"
         },
+        minimizer: [
+            new UglifyJsPlugin(),//压缩js代码
+        ],
         //拆分公共包
         splitChunks: {
             cacheGroups: {
