@@ -14,9 +14,10 @@ let config = {
         runtimeChunk: {
             name: "manifest"
         },
-        minimizer: [
-            new UglifyJsPlugin(),//压缩js代码
-        ],
+        minimize: true,//默认压缩
+        // minimizer: [
+        //     new UglifyJsPlugin(),//三方插件压缩js代码
+        // ],
         //拆分公共包
         splitChunks: {
             cacheGroups: {
