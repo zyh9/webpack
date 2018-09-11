@@ -1,6 +1,6 @@
 ### 生成html和入口文件
 
-	首先在config\entry\entry.js文件配置json
+	首先在config\entry\entry.js文件配置json，安装依赖npm i || cnpm i
 
 	执行npm run devFile，会自动生成devBuild和entryBuild文件夹
 
