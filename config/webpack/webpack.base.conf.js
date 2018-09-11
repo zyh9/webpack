@@ -4,7 +4,11 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const entry = require("./webpack.entry.conf");
 const newEntry = {};
 for (let name in entry) {
-    newEntry[name] = ['webpack-hud', entry[name][0]]
+    newEntry[name] = [
+        '@babel/polyfill',
+        'webpack-hud',
+        entry[name][0]
+    ];
 }
 let config = {
     //入口文件

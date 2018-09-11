@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import '@babel/polyfill';
-// import Header from '../component/Header';
-// import Footer from '../component/Footer';
 import '../../public/css/common.pcss';
 import '../../public/css/index.pcss';
 import apiRequest from '../../public/js/apiRequest';
