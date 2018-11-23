@@ -4,8 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const safeParser = require('postcss-safe-parser');
 const baseWebpackConfig = require("./webpack.base.conf");
 const webpackFile = require('./webpack.file.conf');
@@ -22,7 +22,11 @@ let config = merge(baseWebpackConfig, {
     },
     plugins: [
         // 将css提取到它自己的文件中
-        new ExtractTextPlugin('css/[name].[md5:contenthash:hex:8].css'),
+        // new ExtractTextPlugin('css/[name].[md5:contenthash:hex:8].css'),
+        new MiniCssExtractPlugin({
+            filename: 'css/[name].[hash:8].css',
+            chunkFilename: "css/[id].[hash:8].css"
+        }),
         // 压缩提取的CSS
         // 可以从不同组件复制CSS
         new OptimizeCSSPlugin({
@@ -43,18 +47,30 @@ let config = merge(baseWebpackConfig, {
             //     test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
             //     loader: 'url-loader?limit=8192&name=[name].[hash:8].[ext]&publicPath=../' + webpackFile.resourcePrefix + '&outputPath=' + webpackFile.resource + '/'
             // },
+            // {
+            //     test: /\.(css|pcss)$/,
+            //     use: ExtractTextPlugin.extract({
+            //         fallback: "style-loader",
+            //         use: [
+            //             { loader: 'css-loader', options: {importLoaders: 1 } },
+            //             { loader: 'postcss-loader', options: {
+            //                 ident: 'postcss',
+            //                 // plugins: _ => webpackCom.postcss
+            //             }}
+            //         ],
+            //     }),
+            //     include: webpackCom.cssInclude,
+            // },
             {
                 test: /\.(css|pcss)$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
                     use: [
+                        MiniCssExtractPlugin.loader,
                         { loader: 'css-loader', options: {importLoaders: 1 } },
                         { loader: 'postcss-loader', options: {
                             ident: 'postcss',
                             // plugins: _ => webpackCom.postcss
                         }}
                     ],
-                }),
                 include: webpackCom.cssInclude,
             },
             {
