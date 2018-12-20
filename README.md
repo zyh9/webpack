@@ -28,6 +28,6 @@
 
 [React Router--完全指北](https://zcfy.cc/article/react-router-v4-the-complete-guide-mdash-sitepoint)
 
-[webpack 4 不完全迁移指北](https://github.com/dwqs/blog/issues/60)
+[webpack4 不完全迁移指北](https://github.com/dwqs/blog/issues/60)
 
 [webpack4系列教程](https://godbmw.com/categories/webpack4系列教程/)
