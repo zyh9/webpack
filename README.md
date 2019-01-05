@@ -31,3 +31,5 @@
 [webpack4 不完全迁移指北](https://github.com/dwqs/blog/issues/60)
 
 [webpack4系列教程](https://godbmw.com/categories/webpack4系列教程/)
+
+[升级到Babel 7](https://github.com/babel/babel-upgrade)
