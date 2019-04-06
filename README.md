@@ -41,3 +41,9 @@
 [twitter地址，请戳我](https://twitter.com/dan_abramov)
 
 [2018年，那些我所不知道的技术](https://overreacted.io/zh-hant/things-i-dont-know-as-of-2018/)
+
+### 最新文章
+
+[2019年3月7日，使用 React Hooks 请求数据的四种方式](https://www.robinwieruch.de/react-hooks-fetch-data/)
+
+[2019年3月21日，React-Router 5 已经发布，Route 支持 array 作为 path 输入值了](https://reacttraining.com/blog/react-router-v5/)
