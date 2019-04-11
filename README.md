@@ -34,6 +34,8 @@
 
 [升级到Babel 7](https://github.com/babel/babel-upgrade)
 
+[2019 React Redux 完全指南](https://juejin.im/post/5cac8ccd6fb9a068530111c7)
+
 ### React核心团队成员及Redux作者
 
 [博客地址，请戳我](https://overreacted.io)
