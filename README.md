@@ -48,4 +48,6 @@
 
 [2019年3月7日，使用 React Hooks 请求数据的四种方式](https://www.robinwieruch.de/react-hooks-fetch-data/)
 
+[2019年3月26日，【翻译】在 React Hooks 中如何请求数据？](https://juejin.im/post/5c98fb35518825157172acc6)
+
 [2019年3月21日，React-Router 5 已经发布，Route 支持 array 作为 path 输入值了](https://reacttraining.com/blog/react-router-v5/)
