@@ -38,6 +38,8 @@
 
 [Ant Design 社区插件](https://ant.design/docs/react/recommendation-cn)
 
+[知乎专栏，进击的React](https://zhuanlan.zhihu.com/advancing-react)
+
 ### React核心团队成员及Redux作者
 
 [博客地址，请戳我](https://overreacted.io)
