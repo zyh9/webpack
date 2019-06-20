@@ -2,7 +2,7 @@ const path = require('path');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 // const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -75,7 +75,16 @@ let config = merge(baseWebpackConfig, {
             },
             {
                 test: webpackCom.img,
-                loader: 'url-loader?limit=8192&name=[name].[hash:8].[ext]&publicPath=../' + webpackFile.resourcePrefix + '&outputPath=' + webpackFile.resource + '/'
+                // loader: 'url-loader?limit=8192&name=[name].[hash:8].[ext]&publicPath=../' + webpackFile.resourcePrefix + '&outputPath=' + webpackFile.resource + '/'
+                use: [{
+                    loader: 'url-loader',
+                    options:{
+                        limit: 8192,
+                        name: '[name].[hash:8].[ext]',
+                        publicPath: '../' + webpackFile.resourcePrefix,
+                        outputPath: webpackFile.resource + '/',
+                    }
+                }]
             }
         ]
     }
@@ -100,7 +109,7 @@ for (let chunkName in pages) {
     config.plugins.push(new HtmlWebpackPlugin(conf));
 }
 /* 清除 dist */
-config.plugins.push(new CleanWebpackPlugin([webpackFile.proDirectory], { root: path.resolve(__dirname, '../../'), verbose: true, dry: false }));
+config.plugins.push(new CleanWebpackPlugin());
 
 let copyObj = [
     /*  
