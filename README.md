@@ -40,6 +40,8 @@
 
 [知乎专栏，进击的React](https://zhuanlan.zhihu.com/advancing-react)
 
+[精读《useEffect%20完全指南》](https://github.com/dt-fe/weekly/blob/master/96.精读《useEffect%20完全指南》.md)
+
 ### React核心团队成员及Redux作者
 
 [博客地址，请戳我](https://overreacted.io)
