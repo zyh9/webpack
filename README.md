@@ -40,7 +40,7 @@
 
 [知乎专栏，进击的React](https://zhuanlan.zhihu.com/advancing-react)
 
-[精读《useEffect%20完全指南》](https://github.com/dt-fe/weekly/blob/master/96.精读《useEffect%20完全指南》.md)
+[精读《useEffect 完全指南》](https://github.com/dt-fe/weekly/blob/master/96.精读《useEffect%20完全指南》.md)
 
 ### React核心团队成员及Redux作者
 
@@ -57,3 +57,9 @@
 [2019年3月26日，【翻译】在 React Hooks 中如何请求数据？](https://juejin.im/post/5c98fb35518825157172acc6)
 
 [2019年3月21日，React-Router 5 已经发布，Route 支持 array 作为 path 输入值了](https://reacttraining.com/blog/react-router-v5/)
+
+### 用 react-window 做长列表渲染，非常顺滑
+
+[链接地址](https://web.dev/virtualize-long-lists-react-window)
+
+[Github地址](https://github.com/bvaughn/react-window)
