@@ -44,6 +44,8 @@
 
 [精读《useEffect 完全指南》](https://github.com/dt-fe/weekly/blob/master/96.精读《useEffect%20完全指南》.md)
 
+[classnames插件](https://www.npmjs.com/package/classnames)
+
 ### React核心团队成员及Redux作者
 
 [博客地址，请戳我](https://overreacted.io)
