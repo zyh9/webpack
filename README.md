@@ -46,6 +46,8 @@
 
 [classnames插件](https://www.npmjs.com/package/classnames)
 
+[typescript入门教程](https://github.com/xcatliu/typescript-tutorial)
+
 ### React核心团队成员及Redux作者
 
 [博客地址，请戳我](https://overreacted.io)
