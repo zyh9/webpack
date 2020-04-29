@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../public/css/common.pcss';
-import '../../public/css/index.pcss';
+import '../../public/css/index.less';
 import apiRequest from '../../public/js/apiRequest';
 import apiRequestAsync from '../../public/js/apiRequestAsync';
 

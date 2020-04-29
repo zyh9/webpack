@@ -6,6 +6,7 @@ const baseWebpackConfig = require("./webpack.base.conf");//基础配置
 const webpackFile = require("./webpack.file.conf");//一些路径配置
 const webpackCom = require('./webpack.com.conf');
 const eslintFormatter = require('react-dev-utils/eslintFormatter');
+const portfinder = require('portfinder')
 
 const os = require('os');
 const osAddress = os.networkInterfaces();
@@ -13,7 +14,7 @@ let ip;
 for (let value in osAddress) {
     osAddress[value].forEach(e => {
         if (e.family == "IPv4") {
-            e.address.indexOf('127.0.0.1') == -1&&(ip = e.address);
+            e.address.indexOf('192.168') > -1&&(ip = e.address);
         }
     })
 }
@@ -60,10 +61,12 @@ let config = merge(baseWebpackConfig, {
                 ],
             },
             {
-                test: /\.(css|pcss)$/,
+                test: /\.(css|less|scss|pcss)$/,
                 use: [
                     { loader: "style-loader", options: {sourceMap: true}},
-                    { loader: 'css-loader', options: {sourceMap: true, importLoaders: 1 } },
+                    { loader: 'css-loader', options: {sourceMap: true, importLoaders: 1 }},
+                    { loader: 'less-loader', options: {sourceMap: true}},
+                    { loader: 'sass-loader', options: {sourceMap: true}},
                     { loader: 'postcss-loader', options: {
                         sourceMap: true,
                         ident: 'postcss',
@@ -81,7 +84,7 @@ let config = merge(baseWebpackConfig, {
     /*设置api转发*/
     devServer: {
         host: ip,
-        port: 3000,
+        // port: 3000,
         hot: true,
         inline: true,
         contentBase: path.resolve(webpackFile.devDirectory),
@@ -89,15 +92,25 @@ let config = merge(baseWebpackConfig, {
         disableHostCheck: true,
         proxy: [
             {
-                context: ['/mobileapi/**'],
-                target: 'http://192.168.1.10:3000/',
+                context: ['/api/**'],
+                target: '',
                 secure: false
             }
-        ],
-        /*打开浏览器 并打开本项目网址*/
-        // after() {
-        //     opn('http://' + ip + ':' + this.port);
-        // }
+        ]
     }
 });
-module.exports = config;
+module.exports = new Promise((resolve, reject) => {
+    let port = 3000;
+    portfinder.basePort = port;
+    portfinder.getPortPromise().then(newPort => {
+        if (port !== newPort) {
+            console.log(`${port}端口被占用，开启新端口${newPort}`)
+            port = newPort;
+            config.devServer.port = port;
+            resolve(config)
+        }
+    }).catch(error => {
+        console.log('没有找到空闲端口，请打开任务管理器杀死进程端口再试', error)
+        process.exit()
+    })
+});

@@ -62,10 +62,12 @@ let config = merge(baseWebpackConfig, {
             //     include: webpackCom.cssInclude,
             // },
             {
-                test: /\.(css|pcss)$/,
+                test: /\.(css|less|scss|pcss)$/,
                     use: [
                         MiniCssExtractPlugin.loader,
-                        { loader: 'css-loader', options: {importLoaders: 1 } },
+                        { loader: 'css-loader', options: {importLoaders: 1 }},
+                        { loader: 'less-loader'},
+                        { loader: 'sass-loader'},
                         { loader: 'postcss-loader', options: {
                             ident: 'postcss',
                             // plugins: _ => webpackCom.postcss
