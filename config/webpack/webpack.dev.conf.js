@@ -77,7 +77,7 @@ let config = merge(baseWebpackConfig, {
             },
             {
                 test: webpackCom.img,
-                loader: 'file-loader?name=[name].[hash:8].[ext]&outputPath=' + webpackFile.resource + '/'
+                loader: 'url-loader?name=[name].[hash:8].[ext]&outputPath=' + webpackFile.resource + '/'
             }
         ]
     },

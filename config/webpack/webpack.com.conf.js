@@ -11,7 +11,7 @@ module.exports = {
         // }
     },
     cssInclude : [
-        path.resolve(__dirname, "../../src/public/css/"),
+        path.resolve(__dirname, "../../src/"),
     ],
     img:/\.(png|jpe?g|gif|svg)(\?.*)?$/,
     // postcss:[

@@ -1,42 +1,26 @@
 import React, { Component } from 'react';
 import '../../public/css/common.pcss';
 import '../../public/css/index.less';
-import apiRequest from '../../public/js/apiRequest';
-import apiRequestAsync from '../../public/js/apiRequestAsync';
+// import apiRequest from '../../public/js/apiRequest';
+// import apiRequestAsync from '../../public/js/apiRequestAsync';
 
 // 使用路由
-import {HashRouter as Router, Switch, Route, NavLink, Link, Redirect} from 'react-router-dom';
+import {HashRouter as Router, Switch, Route, NavLink} from 'react-router-dom';
+// Link, Redirect
 import Shop from '../shop/Index';
 import Demo from '../demo/Index';
 
 // 引入公用方法
-import util from '$util/util';
-console.log(util)
+// import util from '$util/util';
+// console.log(util)
+import Suspend from '../../component/Suspend/index'
+import reactIcon from '../../public/img/react.svg'
 
 class Index extends Component {
-    async IndexData() {
-        let data1 = await apiRequestAsync.post('getActivity', {
-            id: 818,
-            templetId: 33
-        })
-        console.log(data1)
-        let data2 = await apiRequestAsync.post('getSkin', {
-            id: 78,
-            templetId: 33
-        })
-        console.log(data2)
-    }
     componentDidMount() {
-        // console.log(apiRequest, apiRequestAsync, util)
-        // this.IndexData()
-        // apiRequest.post('getActivity', {
-        //     id: 818,
-        //     templetId: 33
-        // }, res => {console.log('成功',res)}, err => console.log('失败',err))
-        // apiRequest.post('getSkin', {
-        //     id: 78,
-        //     templetId: 33
-        // }, res => {console.log('成功',res)}, err => console.log('失败',err))
+    }
+    onHandleClick(){
+        alert('hello')
     }
     render() {
         // 测试eslint
@@ -63,6 +47,9 @@ class Index extends Component {
                         <Route path="/demo" component={Demo}/>
                         {/* <Route exact path="/demo" render={_=>(<Redirect to="/" />)}></Route> */}
                     </Switch>
+                    <Suspend onHandleClick={this.onHandleClick.bind(this)}>
+                        <img src={reactIcon} alt=""/>
+                    </Suspend>
                 </div> 
             </Router>
         )

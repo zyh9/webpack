@@ -115,8 +115,8 @@ config.plugins.push(new CleanWebpackPlugin());
 
 let copyObj = [
     /*  
-        {from: './app/public/plugin', to: './plugin'},//一些不需要走webpack的插件
-        {from: './app/public/file', to: './resource'},//一些固定的文件，如下载文件
+        {from: './src/public/plugin', to: './plugin'},//一些不需要走webpack的插件
+        {from: './src/public/file', to: './resource'},//一些固定的文件，如下载文件
     */
     { from: './src/public/img/favicon.ico', to: './' },//网站favicon.ico
 ];
